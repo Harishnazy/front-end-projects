@@ -1,0 +1,16 @@
+:root {
+    --bg: #f9ffe2;
+    --primary: #7d52f2;
+    --primary-trasparent: #6F7E8C10;
+    --widget-bg: #ffffff;
+    --secondary: #6f7e8c;
+    --hover: #f5f5f5;
+    --text: #ffffff;
+    --text-dark: #4c5d0c;
+    --box-border: #c7c7c7;
+    --danger: #ff4d4d;
+    --success: #4bb543;
+    --warning: #ffcc00;
+    --password-strength-bg: #f9fbfd;
+    --progress-bg: #ffffff;
+}
