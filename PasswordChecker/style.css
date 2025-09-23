@@ -88,3 +88,107 @@ body {
     color: var(--primary);
     transition: 0.3s;
 }
+
+.input__field:focus {
+    border-bottom: 2px solid var(--primary);
+}
+
+.input__icon {
+    position: absolute;
+    bottom: -0.725rem;
+    right: -0.85rem;
+    width: 1.625rem;
+    height: 1.625rem;
+    padding: 0.15rem;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    cursor: pointer;
+}
+
+.password__strength {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    margin-top: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.5rem;
+    background: var(--password-strength-bg);
+}
+
+.password__strength__description {
+    font-weight: bold;
+    font-size: 0.5rem;
+}
+
+.password__strength-indicator p {
+    font-weight: bold;
+}
+
+.password__strength-indicator__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.password__strength-items {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    font-size: 0.6rem;
+}
+
+.password__strength-items li {
+    height: 1rem;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    font-size: 0.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.password__strength-items li img {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+.progress {
+    width: 100%;
+    height: 0.5rem;
+    background: var(--progress-bg);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.progress__bar {
+    height: 100%;
+    width: 0%;
+    background: var(--danger);
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.progress__bar-danger {
+    background: var(--danger);
+}
+
+.progress__bar-warning {
+    background: var(--warning);
+}
+
+.progress__bar-success {
+    background: var(--success);
+}
+
+.label-danger {
+    color: var(--danger);
+}
+
+.label-warning {
+    color: var(--warning);
+}
+
+.label-success {
+    color: var(--success);
+}
