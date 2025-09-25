@@ -1,94 +1,94 @@
 const input = document.querySelector('.input__field');
-const inputIcon = document.querySelector('.input__icon');
-const passwordStrength = document.querySelector('.password-bar');
-const passwordLabel = document.querySelector('.password-label');
+const passwordStrengthBar = document.getElementById('password-strength');
+const resultLabel = document.getElementById('result');
 
-inputIcon.addEventListener('click', (e) => {
-    e.prevenDefault();
-
-    inputIncon.setAttribute('src', input.getAttribute('type') === 'password' ? './assets/eye-open.svg' : './assets/eye-closed.svg');
-    input.setAttribute('type', input.getAttribute('type') === 'password' ? 'text' : 'password');
-});
-
-input.addEventListener("Keyup", 
-    function() {
-        let pass = document.getElementById("password").value;
-        checkStreagth(pass);
+// Rule selectors must match HTML class names
+const ruleItems = [
+    {
+        selector: '.low-upper-case',
+        pattern: /(?=.*[a-z])(?=.*[A-Z])/,
+        success: "Lowercase & Uppercase"
+    },
+    {
+        selector: '.number',
+        pattern: /(?=.*\d)/,
+        success: "Number (0-9)"
+    },
+    {
+        selector: '.special-character',
+        pattern: /(?=.*[!@#$%^&*])/,
+        success: "Special Character (!@#$%^&*)"
+    },
+    {
+        selector: '.eight-character',
+        pattern: /.{8,}/,
+        success: "At least 8 characters"
     }
-);
-
-const rules = [{
-    name : 'low-upper-case',
-    pattern: /(?=.*[a-z])(?=.*[A-Z])/,
-},{
-    name : 'one-number',
-    pattern: /(?=.*\d)/,
-},{
-    name : 'one-special-char',
-    pattern: /(?=.*[!@#$%^&*])/,
-},{
-    name : 'min-8-char',
-    pattern: /.{8,}/,
-}];
-
-const checkRule = (password, strength, {pattern, name}) => {
-    if(password.match(pattern)) {
-        strength += 1;
-        document.querySelector(`.${name} img`);
-        img.src = "./assets/icon-check.svg";
-    } else {
-        const img = document.querySelector(`.${name} img`);
-        img.src = "./assets/icon-uncheck.svg";
-    }
-    return strength;
-}
-
-const passwordStrengthProgressRules = [
-    {
-        minStrength: 1,
-        width: '25%',
-        class: 'very-weak',
-        label: 'Very Weak',
-    },
-    {
-        maxStrength: 2,
-        width: '50%',
-        class: 'weak',
-        label: 'Weak',
-    },
-    {
-        maxStrength: 3,
-        width: '75%',
-        class: 'medium',
-        label: 'Medium',
-    },
-    {
-        maxStrength: 4,
-        width: '100%',
-        class: 'strong',
-        label: 'Strong',
-    },
 ];
 
-const makeProgressBar = (strength) => {
-    const rule = passwordStrengthProgressRules.find(
-        r => strength <= r.maxStrength && strength >= r.minStrength
-    )
-    if(rule) {
-        passwordStrength.style.width = rule.width;
-        passwordStrength.className = `password-bar ${rule.class}`;
-        passwordLabel.textContent = rule.label;
-    } else {
-        passwordStrength.style.width = '0%';
-        passwordStrength.className = 'password-bar';
-        passwordLabel.textContent = '';
-    }
-}
+// You can use your own SVGs or PNGs for checked/unchecked
+const CHECK_ICON = "./assets/icon-check.svg";
+const UNCHECK_ICON = "./assets/icon-uncheck.svg";
 
-const checkStreagth = (password) => {
+// Show/hide password (uncomment if you add the icon to HTML)
+/*
+const inputIcon = document.getElementById('togglePassword');
+inputIcon.addEventListener('click', () => {
+    if (input.type === "password") {
+        input.type = "text";
+        inputIcon.src = "./assets/eye-open.svg";
+    } else {
+        input.type = "password";
+        inputIcon.src = "./assets/eye-closed.svg";
+    }
+});
+*/
+
+input.addEventListener("input", function () {
+    const password = input.value;
     let strength = 0;
-    rules.forEach(rule => {
-        strength = checkRule(password, strength, rule);
+
+    ruleItems.forEach(rule => {
+        const li = document.querySelector(rule.selector);
+        const img = li.querySelector('img');
+        if (rule.pattern.test(password)) {
+            strength++;
+            img.src = CHECK_ICON;
+            img.alt = "Checked";
+            li.style.opacity = "1";
+        } else {
+            img.src = UNCHECK_ICON;
+            img.alt = "Unchecked";
+            li.style.opacity = "0.6";
+        }
     });
-    makeProgressBar(strength);
-}
+
+    // Progress bar and label
+    let width = "0%";
+    let color = "var(--danger)";
+    let label = "";
+    if (strength === 1) {
+        width = "25%";
+        color = "var(--danger)";
+        label = "Very Weak";
+    } else if (strength === 2) {
+        width = "50%";
+        color = "var(--warning)";
+        label = "Weak";
+    } else if (strength === 3) {
+        width = "75%";
+        color = "var(--warning)";
+        label = "Medium";
+    } else if (strength === 4) {
+        width = "100%";
+        color = "var(--success)";
+        label = "Strong";
+    }
+    passwordStrengthBar.style.width = width;
+    passwordStrengthBar.style.background = color;
+    resultLabel.textContent = label;
+    resultLabel.className = '';
+    if (strength === 1) resultLabel.classList.add('label-danger');
+    else if (strength === 2 || strength === 3) resultLabel.classList.add('label-warning');
+    else if (strength === 4) resultLabel.classList.add('label-success');
+});

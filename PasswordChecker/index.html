@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="box">
-      <div class="input__wrapper">
+      <div class="input__wrap">
         <input
           type="password"
           id="password"
@@ -21,31 +21,31 @@
         <label for="password" class="input__label">Password</label>
         <!-- <img src="https://www.svgrepo.com/show/521139/eye-show.svg" alt="Eye icon" class="input__icon" id="togglePassword"> -->
       </div>
-      <div class="password-strength">
+      <div class="password__strength">
         <p><span id="result"></span></p>
         <div class="progress">
           <div
             id="password-strength"
-            class="progress-bar"
+            class="progress__bar"
             role="progressbar"
-            style="width: 0%; height: 2px"
+            style="width: 0%; height: 0.5rem"
           ></div>
         </div>
-        <ul class="password-strength-items">
+        <ul class="password__strength-items">
           <li class="low-upper-case">
-            <img src="" alt="" title="Ticker" aria-hidden="true" />
+            <img src="./assets/icon-uncheck.svg" alt="" title="Ticker" aria-hidden="true" />
             &nbsp; Lowercase &amp; Uppercase
           </li>
           <li class="number">
-            <img src="" alt="" title="Ticker" aria-hidden="true" />
+            <img src="./assets/icon-uncheck.svg" alt="" title="Ticker" aria-hidden="true" />
             &nbsp; Number (0-9)
           </li>
           <li class="special-character">
-            <img src="" alt="" title="Ticker" aria-hidden="true" />
+            <img src="./assets/icon-uncheck.svg" alt="" title="Ticker" aria-hidden="true" />
             &nbsp; Special Character (!@#$%^&*)
           </li>
           <li class="eight-character">
-            <img src="" alt="" title="Ticker" aria-hidden="true" />
+            <img src="./assets/icon-uncheck.svg" alt="" title="Ticker" aria-hidden="true" />
             &nbsp; At least 8 characters
           </li>
         </ul>
