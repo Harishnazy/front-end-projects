@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PassWordChecker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input type="password" id="passwordInput" placeholder="Enter your password" />
+    <div class="check-results">
+        <span id="upperCase" class="invalid">
+            <i class="bi bi-shield-x" style="margin-right: 5px;"></i>Contain upper Letter
+        </span>
+        <span id="lowerCase" class="invalid">
+            <i class="bi bi-shield-x" style="margin-right: 5px;"></i>Contain lower Letter
+        </span>
+        <span id="number" class="invalid">
+            <i class="bi bi-shield-x" style="margin-right: 5px;"></i>Contain Number
+        </span>
+        <span id="specialChar" class="invalid">
+            <i class="bi bi-shield-x" style="margin-right: 5px;"></i>Contain Special Character
+        </span>
+        <span id="minLength" class="invalid">
+            <i class="bi bi-shield-x" style="margin-right: 5px;"></i>Minimum 8 Characters
+        </span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
