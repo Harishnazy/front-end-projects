@@ -5,6 +5,7 @@ const operators = document.querySelectorAll('.operation');
 const equalsBtn = document.querySelector('.equals');
 const clearBtn = document.querySelector('.clear');
 const deleteBtn = document.querySelector('.delete');
+const percentageBtn = document.querySelector('.percentage');
 let operation;
 
 function appendNumber(number) {
@@ -72,6 +73,16 @@ deleteBtn.addEventListener('click', () => {
     currentDisplay.innerText = currentDisplay.innerText.slice(0, -1);
 }
 );
+
+percentageBtn.addEventListener('click', () => {
+    if (currentDisplay.innerText !== "") {
+        let value = parseFloat(currentDisplay.innerText);
+        if (!isNaN(value)) {
+            value = value / 100;
+            currentDisplay.innerText = value;
+        }
+    }
+});
 
 // Theme toggle
 const themeToggle = document.querySelector('.theme-toggle');
