@@ -72,3 +72,10 @@ deleteBtn.addEventListener('click', () => {
     currentDisplay.innerText = currentDisplay.innerText.slice(0, -1);
 }
 );
+
+// Theme toggle
+const themeToggle = document.querySelector('.theme-toggle');
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    themeToggle.textContent = document.body.classList.contains('light') ? '🌞' : '🌙';
+});
