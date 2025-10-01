@@ -6,11 +6,10 @@ This project is a simple profile card application that showcases a user profile 
 
 ```
 profile-card-app
-├── src
-│   ├── index.html       # HTML structure for the profile card
-│   ├── style.css        # CSS styles for the card design
-│   └── script.js        # JavaScript for interactive features
-└── README.md            # Documentation for the project
+├── index.html       # HTML structure for the profile card
+├── style.css        # CSS styles for the card design
+└── script.js        # JavaScript for interactive features
+└── README.md        # Documentation for the project
 ```
 
 ## Getting Started
