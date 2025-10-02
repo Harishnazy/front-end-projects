@@ -68,6 +68,22 @@ body {
     flex-direction: column;
     align-items: center;
     backdrop-filter: blur(2px);
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+    animation: cardFadeIn 0.7s cubic-bezier(.4,1.4,.6,1) 0.1s forwards;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.profile-card:hover {
+    box-shadow: 0 16px 40px rgba(60, 60, 120, 0.18), 0 2px 8px rgba(0,0,0,0.08);
+    transform: translateY(-6px) scale(1.025);
 }
 
 .profile-header {
@@ -88,6 +104,16 @@ body {
     background: #b3d6f6;
     margin-right: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    opacity: 0;
+    transform: scale(0.8);
+    animation: imgPopIn 0.7s cubic-bezier(.4,1.4,.6,1) 0.3s forwards;
+}
+
+@keyframes imgPopIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .share-btn {
@@ -138,6 +164,13 @@ body {
     padding: 5px 14px;
     border-radius: 16px;
     font-weight: 500;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.tags span:hover {
+    background: #b3d6f6;
+    color: #007bff;
+    transform: scale(1.08);
 }
 
 .stats {
@@ -156,11 +189,11 @@ body {
     flex: 1;
 }
 
-.stats .icon {
-    color: #222;
-    font-size: 1.1rem;
-    margin-bottom: 2px;
-}
+/* .stats .icon { */
+    /* color: #222; */
+    /* font-size: 1.1rem; */
+    /* margin-bottom: 2px; */
+/* } */
 
 .stat-value {
     font-weight: 600;
@@ -192,14 +225,16 @@ body {
     font-size: 1.08rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
     margin-right: 12px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 
 .contact-button:hover {
-    background: linear-gradient(90deg, #d0eaff 0%, #e3f0fa 100%);
+    background: linear-gradient(90deg, #b3d6f6 0%, #e3f0fa 100%);
     color: #007bff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transform: translateY(-2px) scale(1.04);
 }
 
 .bookmark-btn {
@@ -212,12 +247,14 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background 0.2s, border 0.2s;
+    transition: background 0.2s, border 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
 .bookmark-btn:hover {
     background: #f2f6fa;
     border-color: #b3d6f6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transform: scale(1.12);
 }
 
 .bookmark-btn svg {
