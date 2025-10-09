@@ -85,6 +85,12 @@ function animate() {
 animate();
 
 
+const themeBtn = document.getElementById('theme-toggle-btn');
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    themeBtn.textContent = document.body.classList.contains('light') ? '🌞' : '🌙';
+});
+
 document.addEventListener('keydown', (e) => {
     if (e.key === 't') { // Press 't' to toggle theme
         document.body.classList.toggle('light');
