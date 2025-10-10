@@ -99,3 +99,53 @@ h1 {
     transform: scale(1.08);
 }
 
+header {
+    z-index: 1000;
+}
+
+.navbar {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 2rem;
+    background: rgba(24, 28, 32, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: background 0.3s;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #00e1ff;
+    text-decoration: underline solid #00e1ff;
+}
+
+.navbar.light {
+    background: rgba(244, 246, 250, 0.85);
+}
+
+.navbar.light a {
+    color: #0077ff;
+}
+
+header.light {
+    background: #f4f6fa;
+    color: #222;
+}
+
+header.light a {
+    color: #0077ff;
+}
