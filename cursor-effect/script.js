@@ -108,3 +108,26 @@ document.addEventListener('keydown', (e) => {
         updateNavbarTheme();
     }
 });
+
+// Wrap each letter of h1 in a span, add .space class for spaces
+const h1 = document.querySelector('h1');
+if (h1) {
+    const text = h1.textContent;
+    h1.innerHTML = '';
+    text.split('').forEach(char => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        if (char === ' ') span.classList.add('space');
+        h1.appendChild(span);
+    });
+}
+
+// Animate letter on cursor hover
+h1.querySelectorAll('span').forEach(span => {
+    span.addEventListener('mouseenter', () => {
+        span.classList.add('hovered');
+    });
+    span.addEventListener('mouseleave', () => {
+        span.classList.remove('hovered');
+    });
+});

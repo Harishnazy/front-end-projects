@@ -188,3 +188,30 @@ body.light .cursor.active {
     box-shadow: 0 0 24px #ffd70088;
     border: 2px solid #ffd700;
 }
+
+/* Animate each letter in h1 on hover */
+h1 span {
+    display: inline-block;
+    margin-right: 0.04em; /* small gap between letters */
+    transition: font-size 0.3s, color 0.3s, transform 0.3s;
+    will-change: font-size, color, transform;
+    cursor: pointer;
+}
+
+h1 span.space {
+    width: 0.3em;         /* moderate space for words */
+    margin-right: 0;
+    display: inline-block;
+}
+
+h1 span.hovered {
+    font-size: 3.2rem;
+    color: #00e1ff;
+    transform: scale(1.18) translateY(-8px);
+    z-index: 11;
+}
+
+/* Light theme letter hover */
+body.light h1 span.hovered {
+    color: #0077ff;
+}
