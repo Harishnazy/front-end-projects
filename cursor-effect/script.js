@@ -86,13 +86,25 @@ animate();
 
 
 const themeBtn = document.getElementById('theme-toggle-btn');
+const navbar = document.querySelector('.navbar');
+
+function updateNavbarTheme() {
+    if (document.body.classList.contains('light')) {
+        navbar.classList.add('light');
+    } else {
+        navbar.classList.remove('light');
+    }
+}
+
 themeBtn.addEventListener('click', () => {
     document.body.classList.toggle('light');
     themeBtn.textContent = document.body.classList.contains('light') ? '🌞' : '🌙';
+    updateNavbarTheme();
 });
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 't') { // Press 't' to toggle theme
         document.body.classList.toggle('light');
+        updateNavbarTheme();
     }
 });
