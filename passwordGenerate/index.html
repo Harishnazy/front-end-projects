@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Password Generator</h1>
+        
+        <div class="password-display">
+            <div id="passwordOutput">Click Generate</div>
+            <button class="copy-btn" onclick="copyPassword()">Copy</button>
+        </div>
+
+        <div class="settings">
+            <div class="setting-item">
+                <label>
+                    <span>Password Length</span>
+                    <span class="length-value" id="lengthValue">12</span>
+                </label>
+                <input type="range" id="length" min="4" max="32" value="12" oninput="updateLength()">
+            </div>
+
+            <div class="setting-item">
+                <label class="checkbox-group">
+                    <input type="checkbox" id="uppercase" checked>
+                    <span>Include Uppercase Letters (A-Z)</span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <label class="checkbox-group">
+                    <input type="checkbox" id="lowercase" checked>
+                    <span>Include Lowercase Letters (a-z)</span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <label class="checkbox-group">
+                    <input type="checkbox" id="numbers" checked>
+                    <span>Include Numbers (0-9)</span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <label class="checkbox-group">
+                    <input type="checkbox" id="symbols" checked>
+                    <span>Include Symbols (!@#$%^&*)</span>
+                </label>
+            </div>
+        </div>
+
+        <button class="generate-btn" onclick="generatePassword()">Generate Password</button>
+
+        <div class="strength-indicator">
+            <div class="strength-text" id="strengthText">Password Strength: -</div>
+            <div class="strength-bar">
+                <div class="strength-bar-fill" id="strengthBar" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">Password copied to clipboard!</div>
+
+   <script src="script.js"></script>
+</body>
+</html>
