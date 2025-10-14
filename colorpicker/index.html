@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Color Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Image Color Picker</h1>
+        
+        <div class="content">
+            <div class="upload-section">
+                <div class="upload-box" id="uploadBox">
+                    <div class="upload-text">📤 Click to upload or drag & drop</div>
+                    <div class="upload-hint">PNG, JPG, GIF, WebP</div>
+                    <input type="file" id="imageInput" accept="image/*">
+                </div>
+                <div class="image-container" id="imageContainer">
+                    <img id="previewImage" alt="Preview">
+                    <div id="colorCursor"></div>
+                </div>
+                <div class="color-preview-box" id="colorPreview">
+                    <h3>Current Color</h3>
+                    <div class="color-preview-swatch" id="colorPreviewSwatch"></div>
+                </div>
+                <div class="info-text">💡 Click on the image to pick colors</div>
+            </div>
+
+            <div class="color-section">
+                <div class="color-display" id="colorDisplay"></div>
+
+                <div class="color-info">
+                    <div class="color-item">
+                        <div class="color-label">HEX</div>
+                        <div class="color-value" id="hexValue">#FFFFFF</div>
+                        <button class="copy-btn" data-copy="hex">Copy HEX</button>
+                        <div class="copy-feedback"></div>
+                    </div>
+
+                    <div class="color-item">
+                        <div class="color-label">RGB</div>
+                        <div class="color-value" id="rgbValue">rgb(255, 255, 255)</div>
+                        <button class="copy-btn" data-copy="rgb">Copy RGB</button>
+                        <div class="copy-feedback"></div>
+                    </div>
+
+                    <div class="color-item">
+                        <div class="color-label">HSL</div>
+                        <div class="color-value" id="hslValue">hsl(0, 0%, 100%)</div>
+                        <button class="copy-btn" data-copy="hsl">Copy HSL</button>
+                        <div class="copy-feedback"></div>
+                    </div>
+
+                    <div class="color-item">
+                        <div class="color-label">RGBA</div>
+                        <div class="color-value" id="rgbaValue">rgba(255, 255, 255, 1)</div>
+                        <button class="copy-btn" data-copy="rgba">Copy RGBA</button>
+                        <div class="copy-feedback"></div>
+                    </div>
+                </div>
+
+                <div class="history" id="history">
+                    <div class="history-title">📋 Color History</div>
+                    <div class="history-colors" id="historyColors"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
