@@ -1,5 +1,7 @@
 const uploadBox = document.getElementById('uploadBox');
         const imageInput = document.getElementById('imageInput');
+        const imageUrlInput = document.getElementById('imageUrlInput');
+        const loadUrlButton = document.getElementById('loadUrlButton');
         const previewImage = document.getElementById('previewImage');
         const imageContainer = document.getElementById('imageContainer');
         const colorDisplay = document.getElementById('colorDisplay');
@@ -42,11 +44,36 @@ const uploadBox = document.getElementById('uploadBox');
         function handleImageUpload(file) {
             const reader = new FileReader();
             reader.onload = (e) => {
+                previewImage.crossOrigin = 'anonymous';
                 previewImage.src = e.target.result;
                 previewImage.classList.add('active');
             };
             reader.readAsDataURL(file);
         }
+
+        function loadImageFromUrl() {
+            const url = imageUrlInput.value.trim();
+            if (!url) return;
+
+            previewImage.crossOrigin = 'anonymous';
+            previewImage.onload = () => {
+                previewImage.classList.add('active');
+                colorPreview.classList.remove('active');
+                colorCursor.classList.remove('active');
+            };
+            previewImage.onerror = () => {
+                previewImage.classList.remove('active');
+                alert('Unable to load image. Please check the URL and try again.');
+            };
+            previewImage.src = url;
+        }
+
+        loadUrlButton.addEventListener('click', loadImageFromUrl);
+        imageUrlInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                loadImageFromUrl();
+            }
+        });
 
         // Click to pick color
         previewImage.addEventListener('click', (e) => {
