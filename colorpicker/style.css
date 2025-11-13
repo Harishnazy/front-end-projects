@@ -79,6 +79,69 @@ h1 {
   font-size: 14px;
 }
 
+.url-box {
+  background: #f8f9ff;
+  border: 2px solid #e0e5ff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.1);
+}
+
+.url-title {
+  font-weight: 600;
+  color: #4a4a6a;
+  text-align: center;
+}
+
+.url-input {
+  display: flex;
+  gap: 10px;
+}
+
+.url-input input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #c9d1ff;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.url-input input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.url-input button {
+  padding: 10px 18px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.url-input button:hover {
+  background: #764ba2;
+  transform: translateY(-2px);
+}
+
+.url-input button:active {
+  transform: translateY(0);
+}
+
+.url-hint {
+  font-size: 12px;
+  color: #7a7a9e;
+  text-align: center;
+}
+
 .image-container {
   position: relative;
   display: inline-block;
@@ -283,6 +346,14 @@ h1 {
 @media (max-width: 768px) {
   .content {
     grid-template-columns: 1fr;
+  }
+
+  .url-input {
+    flex-direction: column;
+  }
+
+  .url-input button {
+    width: 100%;
   }
 
   .container {
