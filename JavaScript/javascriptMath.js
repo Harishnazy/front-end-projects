@@ -24,3 +24,36 @@ const result2 = undefined + 5;
 console.log(result2); // NaN
 console.log(typeof result2); // number
 
+// Operator Precedence
+const result5 = (2 + 3) * 4;
+
+console.log(result); // 20
+
+const result6 = 10 - 2 + 3;
+
+console.log(result2); // 11
+
+const result3 = 2 ** 3 ** 2;
+
+console.log(result3); // 512
+
+const result4 = 100 / 5 / 2;
+
+console.log(result4); // 10
+
+// Handling NaN (Not-a-Number)
+console.log(isNaN(NaN));       // true
+console.log(isNaN(undefined)); // true
+console.log(isNaN({}));        // true
+
+console.log(isNaN(true));      // false
+console.log(isNaN(null));      // false
+console.log(isNaN(37));        // false
+
+
+console.log(Number.isNaN(NaN));        // true
+console.log(Number.isNaN(Number.NaN)); // true
+console.log(Number.isNaN(0 / 0));      // true
+
+console.log(Number.isNaN("NaN"));      // false
+console.log(Number.isNaN(undefined));  // false
