@@ -95,6 +95,24 @@
     width: 100%;
 }
 
+.title {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Arial Black', sans-serif;
+    font-size: 2rem;
+    color: #2137ff;
+    letter-spacing: 0.3rem;
+    user-select: none;
+}
+
+.title:hover {
+    color: #5f54fa;
+    transition: color 0.3s;
+    transform: ease-in-out;
+}
+
 /* Light mode styles */
 body.light {
     background: #f5f6fa;
@@ -146,6 +164,10 @@ body.light .calculator .percentage:hover {
 }
 body.light .theme-toggle {
     color: #222;
+}
+
+body.light .title {
+    color: #2a2a2a;
 }
 
 /* Responsive styles for smaller devices */
