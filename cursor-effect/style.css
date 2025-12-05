@@ -215,3 +215,36 @@ h1 span.hovered {
 body.light h1 span.hovered {
     color: #0077ff;
 }
+
+.title {
+    font-size: 2.5rem;
+    color: #fff;
+    letter-spacing: 2px;
+    z-index: 10;
+    transition: color 0.3s;
+    text-align: center;
+}
+
+.title span:after {
+    content: 'Web Developer';
+    animation: words 6s infinite;
+}
+
+@keyframes words {
+    0%, 20% {
+        content: 'Web Developer';
+        color: #00e1ff;
+    }
+    25%, 45% {
+        content: 'Designer';
+        color: #689823;
+    }
+    50%, 70% {
+        content: 'gamer';
+        color : #ff5722;
+    }
+    75%, 95% {
+        content: 'freelancer';
+        color: #ff9f10;
+    }
+}
