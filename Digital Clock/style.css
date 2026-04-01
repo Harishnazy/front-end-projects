@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark {
+    background-color: #111827;
+    color: #fff;
+}
+
+.dark .clock {
+    background-color: #111827;
+    color: #fff;
+}
+
+.dark .theme-toggle {
+    background-color: #111827;
+    color: #fff;
+}
+
+.dark .theme-toggle:hover {
+    background-color: #111827;
+    color: #fff;
+}
